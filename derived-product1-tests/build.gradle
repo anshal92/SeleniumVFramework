@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.ansh'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':automation-framework')
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.19.1'
+    implementation 'org.tinylog:tinylog-api:2.7.0'
+    implementation 'org.tinylog:tinylog-impl:2.7.0'
+}
+
+test {
+    useTestNG(){
+        listeners << 'org.ansh.listeners.TestListener'
+        listeners << 'org.ansh.listeners.ExecutionListener'
+        listeners << 'org.ansh.listeners.SuiteListener'
+    }
+}

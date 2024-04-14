@@ -1,0 +1,6 @@
+rootProject.name = 'SeleniumVFramework'
+include 'automation-framework'
+include 'core-product-tests'
+include 'derived-product1-tests'
+include 'derived-product2-tests'
+
